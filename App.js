@@ -5,7 +5,7 @@ import params from './src/params'
 import Field from './src/components/Field'
 import MineField from './src/components/MineField'
 
-import { createMinedboard } from './src/functions'
+import { createMinedBoard } from './src/functions'
 
 export default class App extends Component {
 
@@ -16,19 +16,18 @@ export default class App extends Component {
 
   minesAmount = () => {
     const cols = params.getColumnsAmount()
-    const rows = params.getRowsAmount()
-    return Math.ceil(cols * rows * params.difficultLevel)
+    const rows = params.getRowsAmount() 
+    return parseInt(Math.ceil(cols * rows * params.difficultLevel))
   }
 
   createState = () => {
     const cols = params.getColumnsAmount()
-    const rows = params.getRowsAmount()
+    const rows = params.getRowsAmount() 
     return {
-      board: createMinedboard(rows, cols, this.minesAmount())
+      board: createMinedBoard(rows, cols, this.minesAmount())
     }
 
   }
-
 
 
   render() {

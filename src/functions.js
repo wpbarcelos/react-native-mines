@@ -15,8 +15,8 @@ const createBoard = (rows, columns) => {
 }
 
 const spreadMines = (board, minesAmount) => {
-    const rows = board.length,
-        columns = board[0].length
+    const rows = board.length
+    const columns = board[0].length
     let minesPlanted = 0
 
     while (minesPlanted < minesAmount) {
@@ -37,4 +37,4 @@ const createMinedBoard = (rows, columns, minesAmout) => {
     return board
 }
 
-export default { createMinedBoard };
+export { createMinedBoard };
